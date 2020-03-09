@@ -68,7 +68,6 @@ class Life(scene.Node):
                 col*rect/-2 + rect/2)
     self.ROWS = int(row)
     self.COLS = int(col)
-    
     self.cells = [[Cell(self.bg, x, y, rect, set_size) for y in range(self.COLS)]for x in range(self.ROWS)]
   
   def draw_stage(self):

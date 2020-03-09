@@ -3,8 +3,8 @@ import numpy as np
 import scene, ui
 
 
-SPEED = 3
-SEED = 4
+SPEED = 1
+SEED = 5
 DIV = 32
 
 c_back = 'black'
@@ -69,7 +69,6 @@ class Life(scene.Node):
                 col*rect/-2 + rect/2)
     self.ROWS = int(row)
     self.COLS = int(col)
-    #np.array([[Cell(self.bg, x, y, rect, set_size) for y in range(self.COLS)]for x in range(self.ROWS)])
     self.cells = np.array([[Cell(self.bg, x, y, rect, set_size) for y in range(self.COLS)]for x in range(self.ROWS)])
   
   def draw_stage(self):
@@ -77,9 +76,7 @@ class Life(scene.Node):
     for y in range(0, self.ROWS):
       for x in range(0, self.COLS):
         if not self.data[y][x]: continue
-        print(y,x)
         self.alive.append([y,x])
-        
         self.cells[y][x].fill_color = c_alive
   
   def reset_color(self, alive):
@@ -128,8 +125,7 @@ class MyScene(scene.Scene):
     self.life = Life(self)
 
   def update(self):
-    pass
-    #self.life.time(self.dt)
+    self.life.time(self.dt)
     
   def touch_began(self, touch):
     self.life.reset_game()
