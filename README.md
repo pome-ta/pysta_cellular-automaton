@@ -29,6 +29,28 @@ Pythonista でcellular automaton(Life Game) を作る
 	- 画面内分割数
 		- 画面サイズ縦横の小さい方を基準にして、正方形を生成
 		- `self.ROWS` = `DIV`
+	- 64 を超えてくるとドキドキする
 
 
+## `np_list`, `py_list`
+
+`scene.ShapeNode` の描画がネックなのか、どこまで早くなるのか確認
+
+
+
+今のところ、`py_list` の方が早い？
+
+
+
+### `np_list`
+
+NumPy 初挑戦 🤗
+
+
+とりあえず手当たり次第、`list` もので変換できるものは`np.` を使ってNumPy化
+
+
+### `py_list`
+
+内包表記できそうなものはとりあえず、内包表記化
 
